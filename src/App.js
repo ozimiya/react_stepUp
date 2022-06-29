@@ -1,11 +1,14 @@
 import { useCallback, useState } from "react";
-import "./styles.css";
-import { ChildArea } from "./ChildArea";
-import { InlineStyle } from "./components/InlineStyle";
-import { CssModules } from "./components/CssModules";
-import { StyledJsx } from "./components/StyledJsx";
-import { StyledComponents } from "./components/StyledComponents";
-import { Emotion } from "./components/Emotion";
+import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+
+//LinkはURLのかきかえ、switchはレンダリングする
+// import "./styles.css";
+import { Home } from "./Home";
+import { Page1 } from "./Page1";
+import { Page2 } from "./Page2";
+import { Page1DatailA } from "./Page1DatailA";
+import { Page1DatailB } from "./Page1DatailB";
+import { Router } from "./router/Router";
 
 export default function App() {
   // const [text, setText] = useState("");
@@ -23,18 +26,15 @@ export default function App() {
   // }, [setOpen]);
 
   return (
-    <div className="App">
-      <InlineStyle />
-      <CssModules />
-      <StyledJsx />
-      <StyledComponents />
-      <Emotion />
-      {/* <input onChange={onChangeInput} value={text}></input>
-      <br />
-      <br />
-      <br />
-      <button onClick={onClickOpen}>表示</button>
-      <ChildArea open={open} onClickClose={onClickClose} /> */}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Link to="/">HOME</Link>
+        <br />
+        <Link to="/Page1">Page1</Link>
+        <br />
+        <Link to="/Page2">Page2</Link>
+      </div>
+      <Router />
+    </BrowserRouter>
   );
 }
