@@ -1,6 +1,5 @@
 import { Home } from "../Home";
 import { Page1 } from "../Page1";
-import { Page2 } from "../Page2";
 import { Page1DatailA } from "../Page1DatailA";
 import { Page1DatailB } from "../Page1DatailB";
 
@@ -12,10 +11,6 @@ export const Page1routes = [
   {
     path: "/Page1",
     children: <Page1 />
-  },
-  {
-    path: "/Page2/",
-    children: <Page2 />
   },
   {
     path: "/Page1/Page1DatailA",
